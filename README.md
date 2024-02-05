@@ -52,11 +52,3 @@ The goodreads database has been downloaded from [kaggle](https://www.kaggle.com/
  1. Start the server `npm run devStart`
 
  2. Navigate to http://localhost:3000 in your browser to view the app.
-
- ### Production environment
-
- ## Deployment
-
- - Platform ?
- - Settings ?
- - Env variables ? 
