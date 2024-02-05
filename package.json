@@ -22,10 +22,10 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.1.1",
     "mongoose-paginate-v2": "^1.8.0",
-    "validator": "^13.11.0"
+    "validator": "^13.11.0",
+    "dotenv": "^16.4.1"
   },
   "devDependencies": {
-    "dotenv": "^16.4.1",
     "nodemon": "^3.0.3"
   }
 }
