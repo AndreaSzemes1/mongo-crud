@@ -1,0 +1,28 @@
+<%- include('partials/header', {title: 'Reading List'})%>
+<main>
+    <div class="content-wrap">
+      
+    <div class="m-3">
+        <h2>Your Reading List</h2>
+        <button class="btn btn-danger btn-sm" onclick="deleteAllBooks()">Delete all</button>
+        <a href="/books" class="btn btn-secondary btn-sm">Add new books</a>
+    </div>
+    <div class="m-3" id="readingList-container">
+        <% if (readingList.length) { %> 
+            <ul class="list-group list-group-flush">
+                <% readingList.forEach(function (book, index) { %>
+                    <li class="list-group-item d-flex flex-wrap justify-content-between align-items-start" id="<%= book._id %>">
+                        <span class="flex-grow-1 mr-3"> <%= book.title %> by <%= book.authors %> </span>
+                        <button class="btn btn-dark btn-sm align-self-center" onclick="markAsRead('<%= book._id %>')"> Read it</button>
+                    </li>
+                    <% }); %>
+                </ul>
+        <% }  else { %>
+            <div> Your reading list is currently empty.</div>
+            <% } %> 
+        
+    </div>
+</div>
+</main>
+<script src="/script.js" type="text/javascript"></script>
+<%- include('partials/footer') %>

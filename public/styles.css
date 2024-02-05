@@ -1,0 +1,11 @@
+.alphabet-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.content-wrap {
+    flex: 1;
+    padding-bottom: 4rem;
+}

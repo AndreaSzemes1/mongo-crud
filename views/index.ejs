@@ -1,0 +1,69 @@
+<%- include('partials/header', {title: 'Home'})%>
+<main">
+<div class="content-wrap">
+<div class="container mt-4">
+        <div class="mb-4">
+            <h2>QHO541 Advanced DataBase System</h1>
+            <h3>Assignment</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="card w-100 text-center mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Number of unique book titles in the database</h5>
+                        <p class="card-text"> <%= uniqueBookTitlesCount %></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card text-center mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Most Published authors</h5>
+                        <div class="card-text">
+                            <ul class="list-group">
+                            <% mostPublishedAuthors.forEach(author => { %>
+                                <li class="list-group-item"> 
+                                    <span style="font-weight: bold;"><%= author._id %>:</span> <%= author.count %> books</li>
+                    
+                            <% }) %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">The 5 highest rated books</h5>
+                        <div class="card-text">
+                            <ul class="list-group list-group-flush">
+                                <% highestRatedBooks.forEach(book => { %>
+                                    <li class="list-group-item">
+                                        <span style="font-weight: bold;"><%= book.title %> by <%= book.authors %> </span>
+                                        <div> Average rating: <%= book.average_rating %> </div>
+                                        <div>Rating count: <%= book.ratings_count %></div>
+                                    </li>
+                                    
+                            <% }); %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="card w-100 text-center mb-4">
+                    <div class="card-body">
+                        <h4 class="card-title">Languages</h5>
+                        <p class="card-text"> <%= uniqueLangugeCount %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</main>
+<%- include('partials/footer') %>

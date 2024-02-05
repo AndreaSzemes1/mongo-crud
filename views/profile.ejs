@@ -1,0 +1,46 @@
+<%- include('partials/header', {title: 'Profile'})%>
+<!-- profile.ejs -->
+<main>
+    <div class="content-wrap">
+        <h2 class="m-3">Hello <%= user.username %></h2>
+        <div class="d-flex flex-column h-100">
+            <div class="container h-100">
+                <div class="row justify-content-center align-items-center" style="height: 80vh;">
+                    <div class="col-md-6">
+                        <% if (success.length) { %>
+                            <div class="alert alert-success">
+                                <%= success %>
+                            </div>
+                        <% } %>
+                        <% if (error.length) { %>
+                            <div class="alert alert-danger">
+                                <%= error %>
+                            </div>
+                        <% } %>
+                        <div class="card align-items-center">
+                            <div class="card-body col-lg-12">      
+                                <h3 class="card-title text-center">Change password</h3>       
+                                <form action="/auth/update-password" method="POST">
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="currentPassword" name="currentPassword" required placeholder="Current password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="newPassword" name="newPassword" required placeholder="New password">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="confirmNewPassword" name="confirmNewPassword" required  placeholder="Confirm new password">
+                                    </div>
+                                    <div class="row justify-content-center align-items-center">
+                                        <button type="submit" class="btn btn-dark w-50">Send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

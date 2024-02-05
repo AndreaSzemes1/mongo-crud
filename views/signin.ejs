@@ -1,0 +1,39 @@
+<%- include('partials/header', {title: 'Login'})%>
+<div class="d-flex flex-column h-100">
+<div class="container h-100">
+    <div class="row justify-content-center align-items-center" style="height: 80vh;">
+        
+        <div class="col-md-6">
+            <% if (success.length) { %>
+                <div class="alert alert-success">
+                    <%= success %>
+                </div>
+            <% } %>
+            <% if (error.length) { %>
+                <div class="alert alert-danger">
+                    <%= error %>
+                </div>
+            <% } %>
+
+            <div class="card align-items-center">
+                <div class="card-body col-lg-12">
+                    <h3 class="card-title text-center">Login</h3>
+                    <form action="/auth/signin" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                        </div>
+                        <div class="row justify-content-center align-items-center">
+                            <button type="submit" class="btn btn-dark w-50">Send</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
+</div>
+<%- include('partials/footer') %>
